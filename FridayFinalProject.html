@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css' rel='stylesheet' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- MAKES IT MOBILE? <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script> !-->
+	<style>
+	body {
+		font-size: 20px;
+		background-image: url("data:image/jpeg;base64,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");
+	
+	.ui-button {
+  background:#3887BE;
+  color:#FFF;
+  display:block;
+  position:absolute;
+  top:50%;left:50%;
+  width:160px;
+  margin:-20px 0 0 -80px;
+  z-index:100;
+  text-align:center;
+  padding:10px;
+  border:1px solid rgba(0,0,0,0.4);
+  border-radius:3px;
+  }
+  .ui-button:hover {
+    background:#3074a4;
+    color:#fff;
+    }
+	
+	</style>
+
+<body>
+	<center>Welcome to Sharp, your one-stop shop for sharps disposal locations!</center>
+	<p><center><button id="locate">Find a disposal location near you</button></p>
+	<p><button id="credits">Credits</button></p>
+	<p><button id="about">About</button></center></p>
+
+	<style>
+	body{
+		font-size: 20px;
+	</style>
+
+	</head>
+<script>
+var userName; //outside function because want all functions to reference this one.
+
+var clickedSubmit = function(event){
+	event.preventDefault(); <!--just prevents from going to sep page; this command just changes same pg!-->
+	//put stuff here
+	//1. save the users name
+	//a.select text thing
+	//b. get the value from it
+	userName = $("#userName").val(); //take username and save it as a value.
+	alert("correctly triggering function!")
+	//2. go to next page.
+	//replace html of <p> with username:
+	$("#name").html("#userName);
+	window.location.href = "#page2";
+	}
+	//combine button with variable: use a selector:
+$("#userButton").click(clickedSubmit);
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+// This uses the HTML5 geolocation API, which is available on
+// most mobile browsers and modern browsers, but not in Internet Explorer
+//
+// See this chart of compatibility for details:
+// http://caniuse.com/#feat=geolocation
+if (!navigator.geolocation) {
+    geolocate.innerHTML = 'Geolocation is not available';
+} else {
+    geolocate.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        map.locate();
+    };
+}
+
+// Once we've got a position, zoom and center the map
+// on it, and add a single marker.
+map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds);
+
+    myLayer.setGeoJSON({
+        type: 'Feature',
+        geometry: {
+            type: 'Point',
+            coordinates: [e.latlng.lng, e.latlng.lat]
+        },
+        properties: {
+            'title': 'Here I am!',
+            'marker-color': '#ff8888',
+            'marker-symbol': 'star'
+        }
+    });
+
+    // And hide the geolocation button
+    geolocate.parentNode.removeChild(geolocate);
+});
+
+// If the user chooses not to allow their location
+// to be shared, display an error message.
+map.on('locationerror', function() {
+    geolocate.innerHTML = 'Position could not be found';
+});
+</script>
+
+
+
+</script>
+
+<div data-role = "page" id= "page1">
+Welcome to Sharps!
+<form>
+Enter your location: <br> <input type="text"> <!-- MAKE ID'S 1 wordnospace br = break; no need to close /br !-->
+<input type = "submit" id ="userButton">
+</form>
+	<a href="#page2"> Sharps woot! </a>
+</div>
+<!--another page!-->
+<div data-role "page" id="page2">
+hey
+<p id= "name">Your location will go here</p>
+</div>
+<!--to make link actually work: href and then call id-->
+
+<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/teamsharps.n7kbiic5/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidGVhbXNoYXJwcyIsImEiOiJjZmMzYzJlMTBiOWI5NTMyNWRmNGUyMmY0ZDVmYzVhNSJ9.9rSlB5lllB6x-8nHoFsiYA'></iframe>
+</body>
+
