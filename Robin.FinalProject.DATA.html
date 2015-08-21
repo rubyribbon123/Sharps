@@ -1,0 +1,63 @@
+<! DOCTYPE html>
+<html>
+<script src='tabletop1.3.4.js'> </script>
+<script>
+
+var tabletop; 
+function init() {
+  tabletop = Tabletop.init( { key: '1yMlTi_gI8z-rBS_o45eBkh43Q5w73pusIFE7wuo1sec',
+                   callback: processData,
+                   simpleSheet: true } )
+}
+
+  window.onload = function() { init() };
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1yMlTi_gI8z-rBS_o45eBkh43Q5w73pusIFE7wuo1sec/edit?usp=sharing';
+
+  function processData(data, Tabletop) {
+  //here.
+  geoArray = [];
+  console.log(data); 
+  // loop through data
+  // for each object in data, build a new object
+  // that conforms to the geoJSON specifications (has the same keys)
+  //lets add that new object to our geoArray!!!!!!
+  // 1. loop
+  // 2. what keys are in each obj of data
+  // 3. what keys do we need for geoJSON*
+var myGeoJSON = {}
+  myGeoJSON.type = 'FeatureCollection';
+  myGeoJSON.features = [];
+	for(i=0; i < array.length; i++){
+		console.log();
+		var locationObject = {}
+		locationObject.type = "Feature";
+		locationObject.properties = {};
+		locationObject.properties.title = array[i].sitename;
+		
+		locationObject.properties.description = 'A hidden gem' ;
+		locationObject.properties['marker-color'] = '#855723';
+		locationObject.properties['marker-size'] = 'large'; 
+		locationObject.properties['marker-symbol'] = 'park';
+	
+		
+		locationObject.geometry = {};
+		locationObject.geometry.type = 'Point';
+		locationObject.geometry.coordinates = [num, nummmmm];
+		
+	
+		myGeoJSON.features.push(locationObject);
+		
+		}
+  } 
+/*function showInfo(data, Tabletop) {
+//LIFELINE https://github.com/jsoma/tabletop//
+    alert("Successfully processed!");
+    console.log(data);
+  }
+  
+  
+  
+  showInfo(); */
+</script>
+</html>

@@ -1,0 +1,157 @@
+/*	Noir HTML5 mobile template  www.QRdvark.com  10jun11	*/
+/*	'Noir' by Azalea Software, Inc. is licensed under the Creative Commons Attribution 3.0 Unported License (CC BY 3.0)	*/
+/*	CSS inspired by Muthu http://discoverweb.info	*/
+/*		online CSS compression: http://www.refresh-sf.com/yui/	*/
+
+* {
+ -webkit-text-size-adjust:none;
+}
+body {
+	background-color:#000;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 90%;
+	line-height: 145%;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+	background-attachment: scroll;
+	background-image: url(bg.png);
+	background-repeat: repeat-x;
+}
+.content {
+	padding: 0px;
+	color: #FFF;
+	margin: 10px 25px;
+}
+#navButtons ul {
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: -10px 0 0 -15px;
+	list-style-type: none;
+}
+#navButtons ul li {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+#navButtons ul a {
+	float: left;
+	width: auto;
+	text-decoration: none;
+	padding: 0 10px;
+	color: #ccc;
+	line-height: 35px;
+	font-size: 17px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#navButtons ul a:hover {
+	-webkit-border-radius: 5px;
+	background-color: #fff;
+}
+menu {
+	text-align:justify;
+}
+#menu ul {
+	list-style: none;
+	margin: 10px;
+	padding: 0;
+	text-align: center;
+}
+#menu ul li a {
+	background-color: #f3f3f3;
+	color: #000;
+	border: 1px solid #999;
+	display: block;
+	font-weight: bold;
+	margin-bottom: -1px;
+	padding: 6px 10px;
+}
+#menu ul li:first-child a {
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+}
+#menu ul li:last-child a {
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+}
+.pageHead {
+	display: block;
+	color: #fff;
+	font-size: 150%;
+	font-weight: bold;
+	text-indent: -10px;
+	padding-top: 55px;
+}
+.pageTitle {
+	display: block;
+	color: #fff;
+	font-size: 150%;
+	font-weight: bold;
+	text-indent: -10px;
+}
+.hangingHead {
+	font-size: 15pt;
+	font-weight: bold;
+	padding-left: 10px;
+	text-indent: -20px;
+	color: #fff;
+	text-shadow: 0 1px 3px #000;
+}
+.hangingSubhead {
+	font-size: 110%;
+	padding-left: 10px;
+	text-indent: -20px;
+	font-weight: bold;
+	color: #fff;
+}
+.caption {
+	font-weight: bold;
+}
+.centerMe {
+ text-align: center;
+}
+.imgRight {
+	float: right;
+	margin: 15px;
+	clear: both;
+	/*  add the following line to create a shadow behind images  */
+	/*  -webkit-box-shadow: 0 0 15px #000; */
+}
+.imgLeft {
+	float: left;
+	margin:15px;
+	clear: both;
+	/*  add the following line to create a shadow behind images  */
+	/*  -webkit-box-shadow: 0 0 15px #000; */
+}
+a {
+	text-decoration: none;
+}
+a:link {
+	color: #1567c0;
+}
+a:visited {
+	color: #1c907c;
+}
+a:active {
+	color: #72aee9;
+}
+a:hover  {
+	color: #0033cc;
+	text-decoration: underline;
+}
+.footer {
+	padding: 2px;
+	line-height: 110%;
+	font-size: 80%;
+	text-align: center;
+	background-attachment: scroll;
+	background-color: transparent;
+	background-image: url(bg.png);
+	background-repeat: repeat-x;
+	background-position: 0 -56px;
+	margin-right: -25px;
+	margin-left: -25px;
+}
